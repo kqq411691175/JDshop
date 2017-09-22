@@ -1,0 +1,138 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+header{
+	width: 100%;
+	height: 80px;
+}
+.loginkuang{
+	width: 346px;
+	height: 361px;
+	background-color: white;
+	position: absolute;
+	top: calc(50% - 173px);
+	left: calc(50% + 180px);
+	
+}
+.loginhead{
+	width: 100%;
+	height: 55px;
+	border-bottom: 1px solid lightgray;
+	position: relative;
+	display: flex;
+}
+.loginhead a{
+	display: inline-block;
+	width: 50%;
+	height: 55px;
+	text-align: center;
+	line-height: 55px;
+	text-decoration: none;
+	font-size: 20px;
+	flex-grow: 1; 
+}
+.loginmain{
+	width: 100%;
+	height: 256px;
+	padding: 20px;
+	text-align: center;
+	position: relative;
+}
+.inp1{
+	width: 267px;
+	height: 40px;
+	margin-top: 10px;
+	border: 1px solid lightgray;
+	margin-left: 40px;
+}.loginmain div{
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	background-image: url(../img/login/pwd-icons-new.png);
+	border: 1px solid lightgray;
+}
+.username{
+	top: 30px;
+	left: 21px;
+}
+.psw{
+	top: 100px;
+	left: 21px;
+}
+.loginfoot{
+	width: 100%;
+	height: 50px;
+	border-top: 1px solid lightgray;
+	position: relative;
+}
+.lostpsw{
+	color: black;
+	margin-top: 10px;
+	margin-left: 200px;
+}
+.regbtn{
+	color: black;
+	margin-left: 100px;
+}
+.lostpsw:hover{
+	color: red;
+	text-decoration: underline;
+}
+.regbtn:hover{
+	color: red;
+	text-decoration: underline;
+}
+.loginbtn{
+	margin-top: 10px;
+	color: white;
+	text-align: center;
+	background-color: red;	
+	width: 287px !important;
+	height: 40px;
+	border: none;
+	position: relative;
+}
+.ico{
+	width: 19px;
+	height: 18px;
+	display: inline-block;
+	background-image: url(../img/login/QQ-weixin.png);
+	margin-top: 15px;
+	margin-left: 20px;
+}
+.header-img1{
+	margin-left: 400px;
+}
+.header-span1{
+	font-size: 30px;
+	line-height: 80px;
+	color: black;
+	position: relative;
+	top: -15px;
+}
+.header-img2{
+	margin-left: 600px;
+}
+.header-span2{
+	color: gray;
+}
+main{
+	width: 100%;
+	height: 475px;
+	background-image: url(../img/login/5731485aN1134b4f0.png);
+	background-color: rgb(233,56,84);
+	background-repeat: no-repeat;
+	background-position: 500px 0;
+	position: relative;
+}
+.p1{
+	margin-top: 10px;
+}
+.p2{
+	text-align: center;
+	font-size: 12px;
+}

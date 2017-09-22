@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<img class="header-img" src="img/login/logo-201305-b.png"/>
+			<span class="header-span1">欢迎注册</span>
+			<span class="header-span2">已有账号?</span>
+			<span class="header-span3"><a href="">请登录</a></span>
+		</header>
+		<main>
+			<section class="register-sec">
+				<form action="/register" method="post">
+					<div class="form-div">
+						<lable>用户名</lable>
+						<input name="petname" type="text" placeholder="请输入您的账号"/>
+					</div>
+					<div class="form-div">
+						<lable>设置密码</lable>
+						<input name="password" type="password" placeholder="建议至少使用两种字符组合"/>
+					</div>
+					<div class="form-div">
+						<lable>确认密码</lable>
+						<input type="password" placeholder="请再次输入密码"/>
+					</div>
+					<div class="form-div">
+						<lable>中国0086﹀</lable>
+						<input type="text" placeholder="建议使用常用手机"/>
+					</div>
+					<div class="form-div">
+						<lable>验证码</lable>
+						<input type="text" placeholder="请输入验证码"/>
+					</div>
+					<div class="form-div">
+						<lable>手机验证码</lable>
+						<input type="text" placeholder="请输入手机验证码"/>
+						<span id="hqyzm">获取验证码</span>
+					</div>
+					<p class="p1">
+						<input type="checkbox" checked/>
+						阅读并同意
+						<a href=""> 《京东用户注册协议》 </a>
+						<a href=""> 《隐私政策》 </a>
+					</p>
+					<input type="submit" name="sub" id="sub" value="立即注册" />					
+				</form>
+			</section>
+			<section class="right-sec">
+				<div class="right-sec-div" style="border-bottom: 1px solid lightgray;">
+					<div style="background-position: 0 -50px;"></div>
+					<a href="">企业用户注册</a>
+				</div>
+				<div class="right-sec-div">
+					<div style="background-position: -50px -50px;"></div>
+					<a href="">INTERNATIONAL CUSTOMERS</a>
+				</div>
+			</section>
+		</main>
+		<br />
+		<p><hr /></p>
+		<br /><p class="p2">关于我们&#x3000; | &#x3000;联系我们&#x3000; |&#x3000; 人才招聘&#x3000; |&#x3000; 商家入驻&#x3000; | &#x3000;广告服务 &#x3000;| &#x3000;手机京东&#x3000; | &#x3000;友情链接 &#x3000;| &#x3000;销售联盟&#x3000; |&#x3000; 京东社区 &#x3000;|&#x3000; 京东公益&#x3000; | &#x3000;English Site</p>
+		<br /><p class="p2">Copyright © 2004-2017  京东JD.com 版权所有 </p>
+	
+	</body>
+	<script type="text/javascript">
+		
+		$('form').submit(function(event){
+			event.preventDefault();      //阻止表单默认提交事件
+			var password =$('input[type=password]').map(function(){ //遍历密码核对两次输入的值
+				return $(this).val();	
+			})	
+			if(password[0] != password[1]){		//如果密码输入不一致
+				alert('两次输入密码不一样');		//提示信息
+				return;		
+			}				
+			var data =$(this).serialize();	     //获取表单信息
+			$.post('/register',data,function(resData){   //表单执行post请求	
+				alert(resData.message);
+				if(resData.code == 3){
+					location.href= 'login.html';     //如果注册成功跳转到登录页面
+				}
+					
+			})	
+		})
+	</script>
+</html>

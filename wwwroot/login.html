@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+		<title></title>
+	</head>
+	<body>
+		<header>
+			<img class="header-img1" src="img/login/logo-201305-b.png"/>
+			<span class="header-span1">&#x3000;欢迎登录</span>
+			<img class="header-img2" src="img/login/q-icon.png"/>
+			<span class="header-span2">登录页面,调查问卷</span>
+		</header>
+		<main>
+			<section class="loginkuang">
+				<div class="loginhead">
+					<a href="" style="border-right: 1px solid lightgray;">扫码登录</a>
+					<a href="">账号登录</a>
+				</div>
+				<div class="loginmain">
+					<div style="background-position: 0 0;" class="username"></div>
+					<div style="background-position: -48px 0;" class="psw"></div>
+					<form action="/login" method="post">
+						<input class="inp1" style="margin-bottom: 20px;" type="text" placeholder="请输入账号" name="petname"/><br />
+						<input class="inp1" type="password" placeholder="请输入密码" name="password"/>
+					
+						<p class="p1">
+							<a class="lostpsw" href="">忘记密码</a>
+						</p>
+						<input type="submit" class="loginbtn" value="登  录">
+					</form>
+				</div>
+				<div class="loginfoot">
+					<div style="background-position: 0 0;" class="ico"></div>
+					<a href="">QQ</a>
+					<div style="background-position: -20px 0;" class="ico"></div>
+					<a href="">微信</a>
+					<a class="regbtn" href="register.html">立即注册</a>
+				</div>
+			</section>
+		</main>
+		<br /><p class="p2">关于我们&#x3000; | &#x3000;联系我们&#x3000; |&#x3000; 人才招聘&#x3000; |&#x3000; 商家入驻&#x3000; | &#x3000;广告服务 &#x3000;| &#x3000;手机京东&#x3000; | &#x3000;友情链接 &#x3000;| &#x3000;销售联盟&#x3000; |&#x3000; 京东社区 &#x3000;|&#x3000; 京东公益&#x3000; | &#x3000;English Site</p>
+		<br /><p class="p2">Copyright © 2004-2017  京东JD.com 版权所有 </p>
+	</body>
+	<script type="text/javascript">
+		$('form').submit(function(event){   //提交表单,实现无刷新请求数据/数据回调,异步操作
+			event.preventDefault();	        //阻止表单默认事件
+			var data = $(this).serialize();         //获取表单信息    序列化表单中的数据,为了提供ajax请求
+			$.post('/login',data,function(resData){	//执行表单post请求
+				alert(resData.message)
+				if(resData.code == 3){	
+					location.href = 'index.html';  //如果登录成功跳转到主页
+				}				
+			})	
+		})
+	</script>
+</html>
