@@ -701,3 +701,21 @@ for(var i=0;i<16;i++){
 	$(this).parent().find('.smjr').hide()
 })
 }
+
+//right2foot 鼠标悬停效果
+$('.right2head a:eq(1)').mouseover(function(){
+	$.get('/words',function(resData){
+		for(var i=0;i<4;i++){
+			$('.right2foot').find('p').eq(i).html(resData.right2foot[i+4]);
+		}
+	})
+	$('.right2headdiv').finish().animate({left:"50px"})
+})
+$('.right2head a:eq(0)').mouseover(function(){
+	$.get('/words',function(resData){
+		for(var i=0;i<4;i++){
+			$('.right2foot').find('p').eq(i).html(resData.right2foot[i]);
+		}
+	})
+	$('.right2headdiv').finish().animate({left:"16px"})
+})
