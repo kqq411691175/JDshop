@@ -1585,11 +1585,12 @@ footer{
 	padding: 5px;
 	position: absolute;
 	top: 300px;
-	left: calc(50% - 60px);
+	left: calc(50% - 100px);
 }
 .lunbo-li-btn div{
 	width: 10px;
 	height: 10px;
+	margin:0 5px;
 	background-color: white;
 	border-radius: 50%;
 }
