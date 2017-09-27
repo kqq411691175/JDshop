@@ -75,6 +75,31 @@ $.get('/words',function(resData){
 	for(i=0;i<35;i++){
 		$('.address-table td').eq(i).html(resData.city[i])
 	}
+	var z = 0;
+	$('.JDleftbtn').click(function(){
+		if(z == 0){
+			z = 5;
+		}else{
+			z = 0;
+		}
+		for(var i=0;i<5;i++){
+			$('.JD-P1').eq(i).html(resData.JDP1[z+i]);
+			$('.JD-P2-sp1').eq(i).find('span').html(resData.JDP2sp1[z+i]);
+			$('.JD-P2-sp2').eq(i).find('del').html(resData.JDP2sp2[z+i]);
+		}
+	})
+	$('.JDrightbtn').click(function(){
+		if(z == 0){
+			z = 5;
+		}else{
+			z = 0;
+		}
+		for(var i=0;i<5;i++){
+			$('.JD-P1').eq(i).html(resData.JDP1[z+i]);
+			$('.JD-P2-sp1').eq(i).find('span').html(resData.JDP2sp1[z+i]);
+			$('.JD-P2-sp2').eq(i).find('del').html(resData.JDP2sp2[z+i]);
+		}
+	})
 })
 $.get('/imgsrc',function(resData){
 	var i;
@@ -231,6 +256,7 @@ $.get('/imgsrc',function(resData){
 		$('.JDmiaoshaimg').eq(2).prop('src',resData.jdmiaosha[n+2])
 		$('.JDmiaoshaimg').eq(3).prop('src',resData.jdmiaosha[n+3])
 		$('.JDmiaoshaimg').eq(4).prop('src',resData.jdmiaosha[n+4])
+		
 	})
 	$('.JDrightbtn').click(function(){
 		if(n == 0){

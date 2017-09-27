@@ -1619,6 +1619,8 @@ footer{
 	position: absolute;
 	top: calc(50% - 8px);
 	left: 0;
+	background-color: gray;
+	padding: 5px 2px;
 	border: none;
 	display: none;
 	z-index: 10;
@@ -1627,6 +1629,8 @@ footer{
 	position: absolute;
 	top: calc(50% - 8px);
 	left: calc(100% - 208px);
+	background-color: gray;
+	padding: 5px 2px;
 	border: none;
 	display: none;
 	z-index: 10;

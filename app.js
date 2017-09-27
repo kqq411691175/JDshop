@@ -86,5 +86,5 @@ app.post('/login',function(req,res){
 	})
 })
 app.listen(3000, function(){
-	console.log('服务器开启')	
+	console.log('服务器开启,端口3000')	
 })
